@@ -1,0 +1,6 @@
+figs/
+output/
+log/
+*.npy
+data/mnist.train
+data/mnist.test
