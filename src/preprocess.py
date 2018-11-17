@@ -20,7 +20,8 @@ def mnist(augment=False):
                     y.append(int(a[0]))
             np.save(fname+".x"+(".aug" if augment else "")+".npy", np.array(x))
             np.save(fname+".y"+(".aug" if augment else "")+".npy", np.array(y))
-        break # only for augmenting
+        if augment:
+            break # no need to change testset
 
 
 def reshape(raw, new_dim):
