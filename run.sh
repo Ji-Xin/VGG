@@ -3,6 +3,11 @@ mkdir -p log
 mkdir -p figs
 mkdir -p output
 
+# preprocess data
+cd data
+python preprocess.py
+cd ..
+
 # raw training and testing
 python -u src/run.py --data_dir data --output_dir output --fig_dir figs --marker raw 1>log/raw 2>log/raw2
 python -u src/run.py --data_dir data --output_dir output --fig_dir figs --marker raw --test
